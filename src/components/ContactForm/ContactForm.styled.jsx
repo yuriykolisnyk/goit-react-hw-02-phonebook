@@ -5,6 +5,8 @@ export const Form = styled.form`
   margin-left: auto;
   margin-bottom: 15px;
   padding: 15px;
+  border: 2px solid #3b3b3b;
+  border-radius: 5px;
 `;
 
 export const Label = styled.label`
@@ -18,12 +20,14 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 300px;
   margin: 10px;
-  padding: 5px;
-  padding: 11px;
+  padding: 10px;
   border: 1px solid #000000;
   border-radius: 4px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  ::placeholder {
+    color: #afafaf;
+  }
   &:focus {
     outline: transparent;
     border: 2px solid rgb(18, 16, 172);

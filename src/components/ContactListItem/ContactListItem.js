@@ -1,12 +1,14 @@
+import { Item, Name, Number, Button } from './ContactListItem.styled';
+
 const ContactItem = ({ contact, onDeleteContact }) => {
   return (
-    <li>
-      <span>{contact.name}: </span>
-      <a href={`tel:${contact.number}`}>{contact.number}</a>
-      <button type="button" onClick={() => onDeleteContact(contact.id)}>
+    <Item>
+      <Name>{contact.name}: </Name>
+      <Number href={`tel:${contact.number}`}>{contact.number}</Number>
+      <Button type="button" onClick={() => onDeleteContact(contact.id)}>
         Delete
-      </button>
-    </li>
+      </Button>
+    </Item>
   );
 };
 

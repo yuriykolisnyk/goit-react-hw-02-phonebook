@@ -57,7 +57,7 @@ class ContactForm extends Component {
             name="number"
             value={this.state.number}
             onChange={this.handleChange}
-            placeholder="+38 067 000-00-00"
+            placeholder="+38 000 000-00-00"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required

@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types';
+import { Label, Input } from './Filter.styled';
 
 const Filter = ({ value, onChange }) => {
   return (
-    <label>
+    <Label>
       Find contacts by name
-      <input
+      <Input
         type="text"
         name="filter"
         value={value}
         onChange={onChange}
+        placeholder="Rosie Simpson"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-    </label>
+    </Label>
   );
 };
 
