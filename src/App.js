@@ -4,6 +4,8 @@ import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 import Filter from './components/Filter';
 
+import toast, { Toaster } from 'react-hot-toast';
+
 import './App.css';
 
 class App extends Component {
@@ -21,13 +23,14 @@ class App extends Component {
     const duplicateName = this.state.contacts.find(contact => contact.name === newContact.name);
 
     if (duplicateName) {
-      alert(`${newContact.name} is already on contacts`);
+      toast.error(`${newContact.name} is already on contacts`);
       return;
     }
 
     this.setState(({ contacts }) => ({
       contacts: [newContact, ...contacts],
     }));
+    toast.success(`${newContact.name} successfully is already add to contacts`);
   };
 
   changeFilter = event => {
@@ -50,6 +53,7 @@ class App extends Component {
   render() {
     return (
       <Container>
+        <Toaster />
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
         <h2>Contacts</h2>
